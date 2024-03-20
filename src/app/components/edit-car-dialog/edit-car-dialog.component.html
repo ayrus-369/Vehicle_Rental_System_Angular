@@ -1,157 +1,211 @@
-<h2 mat-dialog-title>Edit Car</h2>
+<h2 mat-dialog-title style="padding: 10px;">Edit Car</h2>
 <mat-dialog-content class="mat-typography">
-  
   <form #carForm="ngForm">
     <div class="mb-3">
       <label for="id" class="form-label"> id: </label>
 
-      <input type="text" [(ngModel)]="car.id" name="id" class="form-control" id="id" >
+      <input
+        type="text"
+        [(ngModel)]="car.id"
+        name="id"
+        class="form-control"
+        id="id"
+      />
     </div>
     <!-- Image URL -->
     <div class="mb-3">
-        <label for="formFile" class="form-label"> Image URL: </label>
-        <input class="form-control" type="file" id="formFile">
-      </div>
+      <label for="imageUrl" class="form-label">Image Url: </label>
+      <input
+        type="text"
+        [(ngModel)]="car.imageUrl"
+        name="imageUrl"
+        class="form-control"
+        id="imageUrl"
+        placeholder="Enter your image url"
+      />
+    </div>
 
     <!-- Brand -->
-    <!-- <mat-form-field appearance="fill">
-      <mat-label>Brand</mat-label>
-      <input matInput [(ngModel)]="car.brand" name="brand" />
-    </mat-form-field> -->
-    <div class="mb-3">
-        <label for="brand" class="form-label">Brand : </label>
-        <input type="text" [(ngModel)]="car.brand" name="brand" class="form-control" id="brand" placeholder="Ford">
-      </div>
 
-      <!-- Register Number -->
-      <div class="mb-3">
-        <label for="registerNumber" class="form-label">Register Number : </label>
-        <input type="text" [(ngModel)]="car.registerNumber" name="registerNumber" class="form-control" id="registerNumber" placeholder="TN59001">
-      </div>
+    <div class="mb-3">
+      <label for="brand" class="form-label">Brand : </label>
+      <input
+        type="text"
+        [(ngModel)]="car.brand"
+        name="brand"
+        class="form-control"
+        id="brand"
+        placeholder="Ford"
+      />
+    </div>
+
+    <!-- Register Number -->
+    <div class="mb-3">
+      <label for="registerNumber" class="form-label">Register Number : </label>
+      <input
+        type="text"
+        [(ngModel)]="car.registerNumber"
+        name="registerNumber"
+        class="form-control"
+        id="registerNumber"
+        placeholder="TN59001"
+      />
+    </div>
 
     <!-- Mileage -->
-   
+
     <div class="mb-3">
-        <label for="mileage" class="form-label">Mileage : </label>
-        <input type="text" [(ngModel)]="car.mileage" name="mileage" class="form-control" id="mileage" placeholder="80">
-      </div>
+      <label for="mileage" class="form-label">Mileage : </label>
+      <input
+        type="text"
+        [(ngModel)]="car.mileage"
+        name="mileage"
+        class="form-control"
+        id="mileage"
+        placeholder="80"
+      />
+    </div>
 
     <!-- Air Conditioned -->
-    <!-- <mat-checkbox [(ngModel)]="car.isAirConditioned" name="isAirConditioned"
-      >Air Conditioned</mat-checkbox
-    > -->
-    <div class="form-check">
-        <input class="form-check-input" type="checkbox" [(ngModel)]="car.airConditioned" name="airConditioned" value="true" id="airConditioned">
-        <label class="form-check-label" for="airConditioned">
-       AirConditioned
-        </label>
-       
 
-      </div>
+    <div class="form-check">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        [(ngModel)]="car.airConditioned"
+        name="airConditioned"
+        value="true"
+        id="airConditioned"
+      />
+      <label class="form-check-label" for="airConditioned">
+        AirConditioned
+      </label>
+    </div>
 
     <!-- isActive -->
-    <!-- <mat-checkbox [(ngModel)]="car.isActive" name="isActive"
-      >Is Active</mat-checkbox
-    > -->
+
     <div class="form-check">
-        <input class="form-check-input" type="checkbox" [(ngModel)]="car.active" value="true"  name="active">
-      
-        <label class="form-check-label" for="active">
-       Active
-        </label>
-      </div>
+      <input
+        class="form-check-input"
+        type="checkbox"
+        [(ngModel)]="car.active"
+        value="true"
+        name="active"
+      />
+
+      <label class="form-check-label" for="active"> Active </label>
+    </div>
     <!-- isEngaged -->
-    <!-- <mat-checkbox [(ngModel)]="car.isEngaged" name="isEngaged"
-      >Is Engaged</mat-checkbox
-    > -->
+
     <div class="form-check">
-        <input class="form-check-input" type="checkbox" [(ngModel)]="car.engaged" value="true" id="engaged" name="engaged">
-        <label class="form-check-label" for="engaged">
-       Engaged
-        </label>
-      </div>
-      <!-- Availabe status  -->
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" [(ngModel)]="car.available" value="true" id="available" name="available"/>
-        <label class="form-check-label" for="available">
-      Availabe
-        </label>
-      </div>
+      <input
+        class="form-check-input"
+        type="checkbox"
+        [(ngModel)]="car.engaged"
+        value="true"
+        id="engaged"
+        name="engaged"
+      />
+      <label class="form-check-label" for="engaged"> Engaged </label>
+    </div>
+    <!-- Availabe status  -->
+    <div class="form-check">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        [(ngModel)]="car.available"
+        value="true"
+        id="available"
+        name="available"
+      />
+      <label class="form-check-label" for="available"> Availabe </label>
+    </div>
     <!-- Fuel Type -->
-    <!-- <mat-form-field appearance="fill">
-      <mat-label>Fuel Type</mat-label>
-      <input matInput [(ngModel)]="car.fuelType" name="fuelType" />
-    </mat-form-field> -->
-    <!-- <div class="mb-3">
-        <label for="fuelType" class="form-label">Fuel Type : </label>
-        <input type="text" [(ngModel)]="car.fuelType" name="fuelType" class="form-control" id="fuelType" placeholder="petrol">
-      </div> -->
-      <label for="fuelType" class="form-label">Fuel Type : </label>
-      <select class="form-select" [(ngModel)]="car.fuelType" name ="fuelType" id ="fuelType" aria-label="Default select example" aria-placeholder="Fuel Type">
-        <option selected value="GASOLINE">GASOLINE</option>
-        <option value="DIESEL"> DIESEL</option>
-        <option value="ELECTRIC">ELECTRIC</option>
-        <option value="HYBRID">HYBRID</option>
-      </select>
+
+    <label for="fuelType" class="form-label">Fuel Type : </label>
+    <select
+      class="form-select"
+      [(ngModel)]="car.fuelType"
+      name="fuelType"
+      id="fuelType"
+      aria-label="Default select example"
+      aria-placeholder="Fuel Type"
+    >
+      <option selected value="GASOLINE">GASOLINE</option>
+      <option value="DIESEL">DIESEL</option>
+      <option value="ELECTRIC">ELECTRIC</option>
+      <option value="HYBRID">HYBRID</option>
+    </select>
 
     <!-- Gear Type -->
-    <!-- <mat-form-field appearance="fill">
-      <mat-label>Gear Type</mat-label>
-      <input matInput [(ngModel)]="car.gearType" name="gearType" />
-    </mat-form-field> -->
-    <!-- <div class="mb-3">
-        <label for="gearType" class="form-label">Gear Type : </label>
-        <input type="text" [(ngModel)]="car.gearType" name="gearType" class="form-control" id="gearType" placeholder="Manual">
-      </div> -->
-      <label for="gearType" class="form-label">Gear Type : </label>
-      <select class="form-select" [(ngModel)]="car.gearType"name ="gearType" id ="gearType" aria-label="Default select example" aria-placeholder="Gear Type">
-        <option selected value="MANUAL">MANUAL</option>
-        <option value="AUTOMATIC"> AUTOMATIC</option>
-        
-      </select>
+
+    <label for="gearType" class="form-label">Gear Type : </label>
+    <select
+      class="form-select"
+      [(ngModel)]="car.gearType"
+      name="gearType"
+      id="gearType"
+      aria-label="Default select example"
+      aria-placeholder="Gear Type"
+    >
+      <option selected value="MANUAL">MANUAL</option>
+      <option value="AUTOMATIC">AUTOMATIC</option>
+    </select>
 
     <!-- Deposit -->
-    <!-- <mat-form-field appearance="fill">
-      <mat-label>Deposit</mat-label>
-      <input matInput type="number" [(ngModel)]="car.deposit" name="deposit" />
-    </mat-form-field> -->
+
     <div class="mb-3">
-        <label for="deposit" class="form-label">Deposit : </label>
-        <input type="number" [(ngModel)]="car.deposit" name="deposit" class="form-control" id="deposit" placeholder="1000">
-      </div>
+      <label for="deposit" class="form-label">Deposit : </label>
+      <input
+        type="number"
+        [(ngModel)]="car.deposit"
+        name="deposit"
+        class="form-control"
+        id="deposit"
+        placeholder="1000"
+      />
+    </div>
 
     <!-- Rent Per Hour -->
-    <!-- <mat-form-field appearance="fill">
-      <mat-label>Rent Per Hour</mat-label>
+
+    <div class="mb-3">
+      <label for="rentPerHour" class="form-label">Rent Per Hour : </label>
       <input
-        matInput
         type="number"
         [(ngModel)]="car.rentPerHour"
         name="rentPerHour"
-      /> -->
-    <!-- </mat-form-field> -->
-    <div class="mb-3">
-        <label for="rentPerHour" class="form-label">Rent Per Hour : </label>
-        <input type="number" [(ngModel)]="car.rentPerHour" name="rentPerHour" class="form-control" id="rentPerHour" placeholder="120">
-      </div>
+        class="form-control"
+        id="rentPerHour"
+        placeholder="120"
+      />
+    </div>
 
     <!-- Location -->
-    <!-- <mat-form-field appearance="fill">
-      <mat-label>Location</mat-label>
-      <input matInput [(ngModel)]="car.location" name="location" />
-    </mat-form-field>
-  </form> -->
 
-<!-- </mat-dialog-content> -->
-<div class="mb-3">
-    <label for="location" class="form-label">Location : </label>
-    <input type="text" [(ngModel)]="car.location" name="location" class="form-control" id="location" placeholder="chennai">
-  </div>
-<mat-dialog-actions align="end">
-  <!-- <button mat-button [mat-dialog-close]="carForm.value" cdkFocusInitial>
-    Save
-  </button> -->
-  <button type="button" [mat-dialog-close]="carForm.value" class="btn btn-success" style="margin-right: 10px;">Save</button>
-  <!-- <button mat-button mat-dialog-close>Cancel</button> -->
-  <button type="button" mat-dialog-close class="btn btn-danger">Cancel</button>
-</mat-dialog-actions>
+    <div class="mb-3">
+      <label for="location" class="form-label">Location : </label>
+      <input
+        type="text"
+        [(ngModel)]="car.location"
+        name="location"
+        class="form-control"
+        id="location"
+        placeholder="chennai"
+      />
+    </div>
+    <mat-dialog-actions align="end">
+      <button
+        type="button"
+        [mat-dialog-close]="carForm.value"
+        class="btn btn-success"
+        style="margin-right: 10px"
+      >
+        Save
+      </button>
+
+      <button type="button" mat-dialog-close class="btn btn-danger">
+        Cancel
+      </button>
+    </mat-dialog-actions>
+  </form></mat-dialog-content
+>

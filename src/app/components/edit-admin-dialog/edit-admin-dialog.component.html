@@ -1,0 +1,43 @@
+<h2 mat-dialog-title style="padding: 10px;">Edit Admin</h2>
+<mat-dialog-content class="mat-typography">
+  
+  <form #adminForm="ngForm">
+    
+    
+    <div class="mb-3">
+        <label for="name" class="form-label">Name : </label>
+        <input type="text" [(ngModel)]="admin.name" name="name" class="form-control" id="name"/>
+      </div>
+
+     
+      <div class="mb-3">
+        <label for="email" class="form-label">Email : </label>
+        <input type="text" [(ngModel)]="admin.email" name="email" class="form-control" id="email" />
+      </div>
+
+   
+   
+    <div class="mb-3">
+        <label for="phoneNo" class="form-label">Phone Number : </label>
+        <input type="number" [(ngModel)]="admin.phoneNo" name="phoneNo" class="form-control" id="phoneNo" />
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password : </label>
+        <input type="text" [(ngModel)]="admin.password" name="password" class="form-control" id="password" />
+      </div>
+
+   
+       
+
+     
+
+ 
+
+<mat-dialog-actions align="end">
+  <!-- <button mat-button [mat-dialog-close]="carForm.value" cdkFocusInitial>
+    Save
+  </button> -->
+  <button type="button" [mat-dialog-close]="adminForm.value" class="btn btn-success" style="margin-right: 10px;">Save</button>
+  <!-- <button mat-button mat-dialog-close>Cancel</button> -->
+  <button type="button" mat-dialog-close class="btn btn-danger">Cancel</button>
+</mat-dialog-actions>
